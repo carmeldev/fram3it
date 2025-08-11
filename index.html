@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Fram3it - Premium customized photo frames. Frame your memories with style.">
+    <title>Fram3it - Customized Photo Frames</title>
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Google Fonts: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        /* Primary color */
+        :root {
+            --primary-color: #51a3fa;
+        }
+
+        /* Banner Section */
+        .banner {
+            /* background-color: var(--primary-color); */
+            background: url('https://t3.ftcdn.net/jpg/02/68/48/86/360_F_268488616_wcoB2JnGbOD2u3bpn2GPmu0KJQ4Ah66T.jpg');
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .banner h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .banner p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .btn-primary {
+            /* background-color: white;
+            color: var(--primary-color); */
+            background-color: var(--primary-color);
+            color: white;
+            border: 2px solid white;
+            padding: 10px 20px;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s;
+            border-radius: 5px;
+            font-weight: bolder;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-color);
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        /* Product Section */
+        .products {
+            padding: 50px 20px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .product-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .product-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .product-card p {
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        .product-card .price {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .order-btn {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 8px 16px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .order-btn:hover {
+            background-color: #3b8de8;
+        }
+
+        /* Responsiveness */
+        @media (max-width: 992px) {
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .banner h1 {
+                font-size: 2rem;
+            }
+
+            .banner p {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .banner {
+                padding: 60px 15px;
+            }
+
+            .banner h1 {
+                font-size: 1.8rem;
+            }
+
+            .banner p {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Banner Section -->
+    <section class="banner">
+        <h1>Frame Your Memories with Style</h1>
+        <p>Premium Customized Photo Frames – Order Now</p>
+        <a href="#products" class="btn-primary">Shop Now</a>
+    </section>
+
+    <!-- Product Listing Section -->
+    <section id="products" class="products container">
+        <h2 class="text-center mb-4">Our Products</h2>
+        <div class="product-grid">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <img src="https://modernarts.in/wp-content/uploads/2024/06/black-photo-Frame-45-copy-7.jpg" alt="Rustic Brick C1">
+                <h3>Rustic Brick - C1</h3>
+                <p>Classic rustic design with a textured brick finish.</p>
+                <div class="price">₹699</div>
+                <a href="https://wa.me/1234567890?text=I%20am%20interested%20in%20the%20Rustic%20Brick%20C1" class="order-btn" target="_blank">Order Now</a>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card">
+                <img src="https://modernarts.in/wp-content/uploads/2024/06/black-photo-Frame-45-copy-7.jpg" alt="Royal Elegance C2">
+                <h3>Royal Elegance - C2</h3>
+                <p>Regal design with intricate detailing for a luxurious touch.</p>
+                <div class="price">₹699</div>
+                <a href="https://wa.me/1234567890?text=I%20am%20interested%20in%20the%20Royal%20Elegance%20C2" class="order-btn" target="_blank">Order Now</a>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card">
+                <img src="https://modernarts.in/wp-content/uploads/2024/06/black-photo-Frame-45-copy-7.jpg" alt="Midnight Grid C3">
+                <h3>Midnight Grid - C3</h3>
+                <p>Modern grid pattern with a sleek, dark finish.</p>
+                <div class="price">₹699</div>
+                <a href="https://wa.me/1234567890?text=I%20am%20interested%20in%20the%20Midnight%20Grid%20C3" class="order-btn" target="_blank">Order Now</a>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-card">
+                <img src="https://modernarts.in/wp-content/uploads/2024/06/black-photo-Frame-45-copy-7.jpg" alt="Onyx Edge C4">
+                <h3>Onyx Edge - C4</h3>
+                <p>Bold onyx finish with sharp, clean edges.</p>
+                <div class="price">₹699</div>
+                <a href="https://wa.me/1234567890?text=I%20am%20interested%20in%20the%20Onyx%20Edge%20C4" class="order-btn" target="_blank">Order Now</a>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="product-card">
+                <img src="https://modernarts.in/wp-content/uploads/2024/06/black-photo-Frame-45-copy-7.jpg" alt="Carbon Weave C6">
+                <h3>Carbon Weave - C6</h3>
+                <p>Futuristic carbon fiber-inspired weave design.</p>
+                <div class="price">₹699</div>
+                <a href="https://wa.me/1234567890?text=I%20am%20interested%20in%20the%20Carbon%20Weave%20C6" class="order-btn" target="_blank">Order Now</a>
+            </div>
+
+            <!-- Product 6 -->
+            <div class="product-card">
+                <img src="https://modernarts.in/wp-content/uploads/2024/06/black-photo-Frame-45-copy-7.jpg" alt="Mahogany Luxe C7">
+                <h3>Mahogany Luxe - C7</h3>
+                <p>Rich mahogany wood with a luxurious gloss finish.</p>
+                <div class="price">₹699</div>
+                <a href="https://wa.me/1234567890?text=I%20am%20interested%20in%20the%20Mahogany%20Luxe%20C7" class="order-btn" target="_blank">Order Now</a>
+            </div>
+
+            <!-- Product 7 -->
+            <div class="product-card">
+                <img src="https://modernarts.in/wp-content/uploads/2024/06/black-photo-Frame-45-copy-7.jpg" alt="Rustic Braided C8">
+                <h3>Rustic Braided - C8</h3>
+                <p>Handcrafted braided wood for a rustic charm.</p>
+                <div class="price">₹699</div>
+                <a href="https://wa.me/1234567890?text=I%20am%20interested%20in%20the%20Rustic%20Braided%20C8" class="order-btn" target="_blank">Order Now</a>
+            </div>
+
+            <!-- Product 8 -->
+            <div class="product-card">
+                <img src="https://modernarts.in/wp-content/uploads/2024/06/black-photo-Frame-45-copy-7.jpg" alt="Gold Dust C9">
+                <h3>Gold Dust - C9</h3>
+                <p>Shimmering gold finish for a touch of glamour.</p>
+                <div class="price">₹699</div>
+                <a href="https://wa.me/1234567890?text=I%20am%20interested%20in%20the%20Gold%20Dust%20C9" class="order-btn" target="_blank">Order Now</a>
+            </div>
+
+            <!-- Product 9 -->
+            <div class="product-card">
+                <img src="https://modernarts.in/wp-content/uploads/2024/06/black-photo-Frame-45-copy-7.jpg" alt="Silver Elegance C12">
+                <h3>Silver Elegance - C12</h3>
+                <p>Sleek silver design with a sophisticated shine.</p>
+                <div class="price">₹699</div>
+                <a href="https://wa.me/1234567890?text=I%20am%20interested%20in%20the%20Silver%20Elegance%20C12" class="order-btn" target="_blank">Order Now</a>
+            </div>
+
+            <!-- Product 10 -->
+            <div class="product-card">
+                <img src="https://modernarts.in/wp-content/uploads/2024/06/black-photo-Frame-45-copy-7.jpg" alt="Woodland Luxe C13">
+                <h3>Woodland Luxe - C13</h3>
+                <p>Natural wood with a luxurious, polished finish.</p>
+                <div class="price">₹699</div>
+                <a href="https://wa.me/1234567890?text=I%20am%20interested%20in%20the%20Woodland%20Luxe%20C13" class="order-btn" target="_blank">Order Now</a>
+            </div>
+
+            <!-- Product 11 -->
+            <div class="product-card">
+                <img src="https://modernarts.in/wp-content/uploads/2024/06/black-photo-Frame-45-copy-7.jpg" alt="Bronze Hive C14">
+                <h3>Bronze Hive - C14</h3>
+                <p>Honeycomb-inspired bronze design for a unique look.</p>
+                <div class="price">₹699</div>
+                <a href="https://wa.me/1234567890?text=I%20am%20interested%20in%20the%20Bronze%20Hive%20C14" class="order-btn" target="_blank">Order Now</a>
+            </div>
+
+            <!-- Product 12 -->
+            <div class="product-card">
+                <img src="https://modernarts.in/wp-content/uploads/2024/06/black-photo-Frame-45-copy-7.jpg" alt="Mahogany Grid C15">
+                <h3>Mahogany Grid - C15</h3>
+                <p>Modern grid pattern with a rich mahogany base.</p>
+                <div class="price">₹699</div>
+                <a href="https://wa.me/1234567890?text=I%20am%20interested%20in%20the%20Mahogany%20Grid%20C15" class="order-btn" target="_blank">Order Now</a>
+            </div>
+
+            <!-- Product 13 -->
+            <div class="product-card">
+                <img src="https://modernarts.in/wp-content/uploads/2024/06/black-photo-Frame-45-copy-7.jpg" alt="Classic Weave C16">
+                <h3>Classic Weave - C16</h3>
+                <p>Timeless woven design for a traditional feel.</p>
+                <div class="price">₹699</div>
+                <a href="https://wa.me/1234567890?text=I%20am%20interested%20in%20the%20Classic%20Weave%20C16" class="order-btn" target="_blank">Order Now</a>
+            </div>
+
+            <!-- Product 14 -->
+            <div class="product-card">
+                <img src="https://modernarts.in/wp-content/uploads/2024/06/black-photo-Frame-45-copy-7.jpg" alt="Elegant Prism C17">
+                <h3>Elegant Prism - C17</h3>
+                <p>Prismatic design with a reflective, elegant finish.</p>
+                <div class="price">₹699</div>
+                <a href="https://wa.me/1234567890?text=I%20am%20interested%20in%20the%20Elegant%20Prism%20C17" class="order-btn" target="_blank">Order Now</a>
+            </div>
+
+            <!-- Product 15 -->
+            <div class="product-card">
+                <img src="https://modernarts.in/wp-content/uploads/2024/06/black-photo-Frame-45-copy-7.jpg" alt="Bronzed Brick C18">
+                <h3>Bronzed Brick - C18</h3>
+                <p>Rustic brick texture with a bronze overlay.</p>
+                <div class="price">₹699</div>
+                <a href="https://wa.me/1234567890?text=I%20am%20interested%20in%20the%20Bronzed%20Brick%20C18" class="order-btn" target="_blank">Order Now</a>
+            </div>
+
+            <!-- Product 16 -->
+            <div class="product-card">
+                <img src="https://modernarts.in/wp-content/uploads/2024/06/black-photo-Frame-45-copy-7.jpg" alt="Obsidian Strata C19">
+                <h3>Obsidian Strata - C19</h3>
+                <p>Layered obsidian design for a bold statement.</p>
+                <div class="price">₹699</div>
+                <a href="https://wa.me/1234567890?text=I%20am%20interested%20in%20the%20Obsidian%20Strata%20C19" class="order-btn" target="_blank">Order Now</a>
+            </div>
+
+            <!-- Product 17 -->
+            <div class="product-card">
+                <img src="https://modernarts.in/wp-content/uploads/2024/06/black-photo-Frame-45-copy-7.jpg" alt="Shadow Weave C20">
+                <h3>Shadow Weave - C20</h3>
+                <p>Subtle woven pattern with a dark, shadowy finish.</p>
+                <div class="price">₹699</div>
+                <a href="https://wa.me/1234567890?text=I%20am%20interested%20in%20the%20Shadow%20Weave%20C20" class="order-btn" target="_blank">Order Now</a>
+            </div>
+
+            <!-- Product 18 -->
+            <div class="product-card">
+                <img src="https://modernarts.in/wp-content/uploads/2024/06/black-photo-Frame-45-copy-7.jpg" alt="Regal Lattice C21">
+                <h3>Regal Lattice - C21</h3>
+                <p>Intricate lattice design with a royal aesthetic.</p>
+                <div class="price">₹699</div>
+                <a href="https://wa.me/1234567890?text=I%20am%20interested%20in%20the%20Regal%20Lattice%20C21" class="order-btn" target="_blank">Order Now</a>
+            </div>
+
+            <!-- Product 19 -->
+            <div class="product-card">
+                <img src="https://modernarts.in/wp-content/uploads/2024/06/black-photo-Frame-45-copy-7.jpg" alt="Ember Leaf C22">
+                <h3>Ember Leaf - C22</h3>
+                <p>Leaf-inspired design with a warm ember glow.</p>
+                <div class="price">₹699</div>
+                <a href="https://wa.me/1234567890?text=I%20am%20interested%20in%20the%20Ember%20Leaf%20C22" class="order-btn" target="_blank">Order Now</a>
+            </div>
+
+            <!-- Product 20 -->
+            <div class="product-card">
+                <img src="https://modernarts.in/wp-content/uploads/2024/06/black-photo-Frame-45-copy-7.jpg" alt="Royal Crest C23">
+                <h3>Royal Crest - C23</h3>
+                <p>Ornate crest design for a majestic look.</p>
+                <div class="price">₹699</div>
+                <a href="https://wa.me/1234567890?text=I%20am%20interested%20in%20the%20Royal%20Crest%20C23" class="order-btn" target="_blank">Order Now</a>
+            </div>
+
+            <!-- Product 21 -->
+            <div class="product-card">
+                <img src="https://modernarts.in/wp-content/uploads/2024/06/black-photo-Frame-45-copy-7.jpg" alt="Gilded Vine C24">
+                <h3>Gilded Vine - C24</h3>
+                <p>Elegant vine pattern with a golden finish.</p>
+                <div class="price">₹699</div>
+                <a href="https://wa.me/1234567890?text=I%20am%20interested%20in%20the%20Gilded%20Vine%20C24" class="order-btn" target="_blank">Order Now</a>
+            </div>
+
+            <!-- Product 22 -->
+            <div class="product-card">
+                <img src="https://modernarts.in/wp-content/uploads/2024/06/black-photo-Frame-45-copy-7.jpg" alt="Golden Harvest C26">
+                <h3>Golden Harvest - C26</h3>
+                <p>Warm golden design inspired by autumn harvests.</p>
+                <div class="price">₹699</div>
+                <a href="https://wa.me/1234567890?text=I%20am%20interested%20in%20the%20Golden%20Harvest%20C26" class="order-btn" target="_blank">Order Now</a>
+            </div>
+
+            <!-- Product 23 -->
+            <div class="product-card">
+                <img src="https://modernarts.in/wp-content/uploads/2024/06/black-photo-Frame-45-copy-7.jpg" alt="Rustic Mosaic C27">
+                <h3>Rustic Mosaic - C27</h3>
+                <p>Mosaic pattern with a rustic, earthy feel.</p>
+                <div class="price">₹699</div>
+                <a href="https://wa.me/1234567890?text=I%20am%20interested%20in%20the%20Rustic%20Mosaic%20C27" class="order-btn" target="_blank">Order Now</a>
+            </div>
+
+            <!-- Product 24 -->
+            <div class="product-card">
+                <img src="https://modernarts.in/wp-content/uploads/2024/06/black-photo-Frame-45-copy-7.jpg" alt="Aged Timber C28">
+                <h3>Aged Timber - C28</h3>
+                <p>Weathered timber look for a vintage aesthetic.</p>
+                <div class="price">₹699</div>
+                <a href="https://wa.me/1234567890?text=I%20am%20interested%20in%20the%20Aged%20Timber%20C28" class="order-btn" target="_blank">Order Now</a>
+            </div>
+
+            <!-- Product 25 -->
+            <div class="product-card">
+                <img src="https://modernarts.in/wp-content/uploads/2024/06/black-photo-Frame-45-copy-7.jpg" alt="Ash Wood C29">
+                <h3>Ash Wood - C29</h3>
+                <p>Light ash wood with a clean, minimalist design.</p>
+                <div class="price">₹699</div>
+                <a href="https://wa.me/1234567890?text=I%20am%20interested%20in%20the%20Ash%20Wood%20C29" class="order-btn" target="_blank">Order Now</a>
+            </div>
+
+            <!-- Product 26 -->
+            <div class="product-card">
+                <img src="https://modernarts.in/wp-content/uploads/2024/06/black-photo-Frame-45-copy-7.jpg" alt="Ebony Mosaic E1">
+                <h3>Ebony Mosaic - E1</h3>
+                <p>Dark ebony with a stunning mosaic pattern.</p>
+                <div class="price">₹699</div>
+                <a href="https://wa.me/1234567890?text=I%20am%20interested%20in%20the%20Ebony%20Mosaic%20E1" class="order-btn" target="_blank">Order Now</a>
+            </div>
+
+            <!-- Product 27 -->
+            <div class="product-card">
+                <img src="https://modernarts.in/wp-content/uploads/2024/06/black-photo-Frame-45-copy-7.jpg" alt="Royal Arc E2">
+                <h3>Royal Arc - E2</h3>
+                <p>Curved design with a royal, elegant finish.</p>
+                <div class="price">₹699</div>
+                <a href="https://wa.me/1234567890?text=I%20am%20interested%20in%20the%20Royal%20Arc%20E2" class="order-btn" target="_blank">Order Now</a>
+            </div>
+
+            <!-- Product 28 -->
+            <div class="product-card">
+                <img src="https://modernarts.in/wp-content/uploads/2024/06/black-photo-Frame-45-copy-7.jpg" alt="Obsidian Weave E3">
+                <h3>Obsidian Weave - E3</h3>
+                <p>Dark woven pattern with an obsidian sheen.</p>
+                <div class="price">₹699</div>
+                <a href="https://wa.me/1234567890?text=I%20am%20interested%20in%20the%20Obsidian%20Weave%20E3" class="order-btn" target="_blank">Order Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bootstrap JS (for any potential interactivity, though not strictly needed here) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
