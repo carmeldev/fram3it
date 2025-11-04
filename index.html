@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Fram3it - Premium customized photo frames. Frame your memories with style.">
+  <!-- <title>Fram3it - Customized Photo Frames</title> -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Frame3it | Customizable Frames at Best Price with Free Shipping</title>
+  <meta name="description"
+    content="Frame3it offers customizable photo frames, gift frames, and presentation frames at the lowest price with free shipping across India. Choose A3 or A4 frames and make your moments shine!" />
+  <meta name="keywords"
+    content="custom frames, photo frames, gift frames, personalized frames, presentation frames, cheap frames, frame3it, frame it, wall decor, photo gifts" />
+  <meta name="author" content="Frame3it Team" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.fram3it.com/" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/logo/frame_it_logo.png" />
+  <link rel="apple-touch-icon" href="assets/logo/frame_it_logo.png" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.fram3it.com/" />
+  <meta property="og:title" content="Frame3it | Customizable Frames at Best Price" />
+  <meta property="og:description"
+    content="Get beautiful customizable frames at affordable prices with free delivery all over India. Choose your perfect frame today!" />
+  <meta property="og:image" content="https://www.fram3it.com/assets/logo/frame_it_logo.png" />
+  <meta property="og:site_name" content="Frame3it" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://www.fram3it.com/" />
+  <meta name="twitter:title" content="Frame3it | Customizable Frames with Free Shipping" />
+  <meta name="twitter:description"
+    content="Custom photo and gift frames at unbeatable prices. Free shipping all over India!" />
+  <meta name="twitter:image" content="https://www.fram3it.com/assets/logo/frame_it_logo.png" />
+
+  <!-- Theme Color for Mobile -->
+  <meta name="theme-color" content="#51a3fa" />
+
+  <!-- Structured Data for Google Rich Results -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Frame3it",
+    "url": "https://www.fram3it.com/",
+    "logo": "https://www.fram3it.com/assets/logo/frame_it_logo.png",
+    "description": "Customizable photo and gift frames at affordable prices with free shipping all over India.",
+    "sameAs": [
+      "https://www.facebook.com/frame3it",
+      "https://www.instagram.com/frame3it",
+      "https://www.linkedin.com/company/frame3it"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+91-XXXXXXXXXX",
+      "contactType": "Customer Service",
+      "areaServed": "IN",
+      "availableLanguage": ["English", "Hindi", "Tamil"]
+    }
+  }
+  </script>
+  <!-- Bootstrap 5 CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <!-- Google Fonts: Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap');
+
+    /* * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      font-family: 'Outfit', sans-serif;
+      background: linear-gradient(135deg, #ffffff 0%, #f7f7f7 100%);
+      overflow: hidden;
+      position: relative;
+      color: #1c1c1c;
+    } */
+
+    /* === Header === */
+    .header {
+      /* position: absolute; */
+      top: 15px;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1100;
+    }
+
+    .hamburger {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      cursor: pointer;
+      width: 35px;
+      height: 25px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      z-index: 1200;
+    }
+
+    .hamburger span {
+      background: #1c1c1c;
+      height: 4px;
+      border-radius: 2px;
+      transition: 0.3s;
+    }
+
+    .hamburger.active span:nth-child(1) {
+      transform: translateY(10px) rotate(45deg);
+    }
+
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+      transform: translateY(-10px) rotate(-45deg);
+    }
+
+    .logo-top {
+      width: 130px;
+      height: 130px;
+      background: url('./assets/logo/frame_it_logo.png') center/contain no-repeat;
+    }
+
+    /* === Side Panel === */
+    .side-panel {
+      position: fixed;
+      top: 0;
+      left: -300px;
+      width: 280px;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      box-shadow: 2px 0 20px rgba(0, 0, 0, 0.1);
+      transition: left 0.4s ease;
+      padding: 80px 25px;
+      z-index: 1000;
+    }
+
+    .side-panel.active {
+      left: 0;
+    }
+
+    .side-panel h3 {
+      font-weight: 600;
+      font-size: 1.6rem;
+      color: #FDC500;
+      margin-bottom: 25px;
+    }
+
+    .side-panel ul {
+      list-style: none;
+    }
+
+    .side-panel ul li {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #333;
+      margin: 18px 0;
+      opacity: 0;
+      transform: translateX(-20px);
+      animation: fadeInLeft 0.6s forwards;
+    }
+
+    .side-panel.active ul li {
+      opacity: 1;
+      transform: translateX(0);
+      transition: all 0.3s ease;
+    }
+
+    @keyframes fadeInLeft {
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    /* === Main Content === */
+    .main-container {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      /* justify-content: space-between; */
+      /* height: 100vh; */
+      padding: 0 60px;
+      margin: 20px 0;
+    }
+
+    /* === Banner Section === */
+    .banner {
+      width: 45%;
+      animation: fadeInUp 1s ease-out;
+    }
+
+    .title {
+      font-weight: 700;
+      font-size: 2.6rem;
+      color: #1c1c1c;
+      margin-bottom: 20px;
+      animation: fadeInUp 1s ease-out;
+    }
+
+    .title span {
+      color: #FDC500;
+    }
+
+    .subtitle {
+      font-weight: 500;
+      font-size: 1.2rem;
+      color: #333;
+      line-height: 1.5;
+      margin-bottom: 12px;
+      animation: fadeInUp 1.2s ease-out;
+    }
+
+    .subtitle span {
+      color: #FDC500;
+    }
+
+    .subsubtitle {
+      font-weight: 400;
+      font-size: 1rem;
+      color: #444;
+      line-height: 1.5;
+      animation: fadeInUp 1.4s ease-out;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .search-container {
+      margin-top: 25px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      animation: fadeInUp 1.6s ease-out;
+    }
+
+    .search-box {
+      width: 100%;
+      max-width: 400px;
+      background: #fff;
+      border-radius: 50px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      padding: 12px 20px 12px 50px;
+      font-size: 1rem;
+      border: none;
+      outline: none;
+      transition: all 0.4s ease;
+    }
+
+    .search-box:hover {
+      box-shadow: 0 6px 20px rgba(253, 197, 0, 0.4);
+      transform: scale(1.03);
+    }
+
+    .search-box:focus {
+      box-shadow: 0 8px 25px rgba(253, 197, 0, 0.6);
+      transform: scale(1.05);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 18px;
+      font-size: 20px;
+      color: #FDC500;
+      pointer-events: none;
+      transition: transform 0.3s ease;
+      z-index: 1;
+    }
+
+    .search-container:hover .search-icon {
+      transform: rotate(15deg);
+    }
+
+    /* === Image Slider === */
+    .slider-container {
+      position: relative;
+      width: 50%;
+      aspect-ratio: 16/9;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    }
+
+    /* .slider-container.initial-wiggle {
+      animation: initialWiggle 2.5s ease-in-out;
+    } */
+
+    @keyframes initialWiggle {
+      0% {
+        transform: translateX(0);
+      }
+
+      20% {
+        transform: translateX(-8px);
+      }
+
+      40% {
+        transform: translateX(8px);
+      }
+
+      60% {
+        transform: translateX(-5px);
+      }
+
+      80% {
+        transform: translateX(5px);
+      }
+
+      100% {
+        transform: translateX(0);
+      }
+    }
+
+    .slider-container img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.2s ease-out;
+    }
+
+    .slider-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50%;
+      height: 100%;
+      overflow: hidden;
+      transition: width 0.15s ease-out;
+    }
+
+    .slider-overlay img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .slider-handle {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 4px;
+      height: 100%;
+      background: #fff;
+      cursor: ew-resize;
+      transform: translateX(-50%);
+      transition: left 0.15s ease-out;
+    }
+
+    .slider-handle.initial-wiggle {
+      animation: initialWiggle 2.5s ease-in-out;
+    }
+
+    .slider-handle::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 40px;
+      height: 40px;
+      background: #FDC500;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    @media (max-width: 900px) {
+      .main-container {
+        flex-direction: column;
+        padding: 120px 20px 20px;
+      }
+
+      .banner,
+      .slider-container {
+        width: 100%;
+      }
+
+      .banner {
+        text-align: center;
+      }
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa;
+      color: #333;
+    }
+
+    /* Primary color */
+    :root {
+      --primary-color: #51a3fa;
+    }
+
+    /* Banner Section */
+    /* .banner {
+            background-color: var(--primary-color);
+            background: url('https://t3.ftcdn.net/jpg/02/68/48/86/360_F_268488616_wcoB2JnGbOD2u3bpn2GPmu0KJQ4Ah66T.jpg');
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            animation: fadeIn 1.5s ease-in-out;
+        } */
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    .banner h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    .banner p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+
+    .btn-primary {
+      /* background-color: white;
+            color: var(--primary-color); */
+      background-color: var(--primary-color);
+      color: white;
+      border: 2px solid white;
+      padding: 10px 20px;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: background-color 0.3s, color 0.3s;
+      border-radius: 5px;
+      font-weight: bolder;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--primary-color);
+      color: white;
+      font-size: 1.2rem;
+    }
+
+    /* Product Section */
+    .product-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px 40px;
+    }
+
+    .product-card {
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      padding: 16px;
+      text-align: center;
+      background: #fff;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      transition: 0.3s;
+    }
+
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .price {
+      margin-top: 10px;
+    }
+
+    select {
+      padding: 6px 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    .price-text {
+      margin-left: 10px;
+      font-weight: bold;
+      color: #51a3fa;
+    }
+
+    .order-btn {
+      margin-top: 10px;
+      background: #51a3fa;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+
+    .order-btn:hover {
+      background: #3e8ed0;
+    }
+
+    .productName {
+      font-size: 1.25rem;
+      font-weight: 600;
+      padding-top: 12px;
+    }
+
+    .product-footer {
+      margin-top: auto;
+      /* pushes footer to bottom */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .heading {
+      font-weight: 600;
+      color: #51a3fa;
+      margin-top: 15px;
+    }
+  
+    @media (max-width: 576px) {
+      .product-container {
+        padding: 20px;
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Banner Section -->
+  <!-- Header -->
+  <div class="header">
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+    <div class="logo-top"></div>
+  </div>
+
+  <!-- Side Panel -->
+  <div class="side-panel" id="sidePanel">
+    <h3>Explore</h3>
+    <ul>
+      <li>Custom Frames</li>
+      <li>Calendars</li>
+      <li>Anime Frames</li>
+      <li>Cinema Frames</li>
+      <li>Sports Frames</li>
+    </ul>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-container">
+    <div class="banner">
+      <div class="title">
+        Snap it. <span>Fram3 it.</span> Love it!
+      </div>
+      <div class="subtitle">
+        Capture your moments. <span>Frame them beautifully.</span> Treasure forever.
+      </div>
+      <div class="subsubtitle">
+        Premium Customized Photo Frames – Order Now.
+      </div>
+
+      <div class="search-container">
+        <img src="./assets/search.png" class="search-icon">
+        <input type="text" id="search" class="search-box" placeholder="Search frames, sizes, or styles...">
+      </div>
+    </div>
+
+    <div class="slider-container" id="slider">
+      <img src="./2.jpg" alt="After Image">
+      <div class="slider-overlay" id="overlay">
+        <img src="./1.jpg" alt="Before Image">
+      </div>
+      <div class="slider-handle" id="handle"></div>
+    </div>
+  </div>
+
+
+  <div style="margin-top: 40px">
+    <!-- Product Listing Section -->
+    <h2 class="text-center heading">Our Products</h2>
+    <section id="products" class="products container">
+
+    </section>
+    <div class="product-container">
+      <!-- Example product card template -->
+    </div>
+  </div>
+
+  <!-- Bootstrap JS (for any potential interactivity, though not strictly needed here) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+
+  <script>
+    const products = [
+      { name: "Rustic Brick", code: "C1", desc: "Classic rustic design with a textured brick finish." },
+      { name: "Royal Elegance", code: "C2", desc: "Regal design  for a luxurious touch." },
+      { name: "Midnight Grid", code: "C3", desc: "Modern grid pattern with a sleek, dark finish." },
+      { name: "Onyx Edge", code: "C4", desc: "Bold onyx finish with sharp, clean edges." },
+      { name: "Carbon Weave", code: "C6", desc: "Futuristic carbon fiber-inspired weave design." },
+      { name: "Mahogany Luxe", code: "C7", desc: "Rich mahogany wood with a luxurious gloss finish." },
+      { name: "Rustic Braided", code: "C8", desc: "Handcrafted braided wood for a rustic charm." },
+      { name: "Gold Dust", code: "C9", desc: "Shimmering gold finish for a touch of glamour." },
+      { name: "Silver Elegance", code: "C12", desc: "Sleek silver design with a sophisticated shine." },
+      { name: "Woodland Luxe", code: "C13", desc: "Natural wood with a luxurious, polished finish." },
+      { name: "Bronze Hive", code: "C14", desc: "Honeycomb-inspired bronze design for a unique look." },
+      { name: "Mahogany Grid", code: "C15", desc: "Modern grid pattern with a rich mahogany base." },
+      { name: "Classic Weave", code: "C16", desc: "Timeless woven design for a traditional feel." },
+      { name: "Elegant Prism", code: "C17", desc: "Prismatic design with a reflective, elegant finish." },
+      { name: "Bronzed Brick", code: "C18", desc: "Rustic brick texture with a bronze overlay." },
+      { name: "Obsidian Strata", code: "C19", desc: "Layered obsidian design for a bold statement." },
+      { name: "Shadow Weave", code: "C20", desc: "Subtle woven pattern with a dark, shadowy finish." },
+      { name: "Regal Lattice", code: "C21", desc: "Intricate lattice design with a royal aesthetic." },
+      { name: "Ember Leaf", code: "C22", desc: "Leaf-inspired design with a warm ember glow." },
+      { name: "Royal Crest", code: "C23", desc: "Ornate crest design for a majestic look." },
+      { name: "Gilded Vine", code: "C24", desc: "Elegant vine pattern with a golden finish." },
+      { name: "Golden Harvest", code: "C26", desc: "Warm golden design inspired by autumn harvests." },
+      { name: "Rustic Mosaic", code: "C27", desc: "Mosaic pattern with a rustic, earthy feel." },
+      { name: "Aged Timber", code: "C28", desc: "Weathered timber look for a vintage aesthetic." },
+      { name: "Ash Wood", code: "C29", desc: "Light ash wood with a clean, minimalist design." },
+      // { name: "Ebony Mosaic", code: "E1", desc: "Dark ebony with a stunning mosaic pattern." },
+      // { name: "Royal Arc", code: "E2", desc: "Curved design with a royal, elegant finish." },
+      // { name: "Obsidian Weave", code: "E3", desc: "Dark woven pattern with an obsidian sheen." }
+    ];
+
+    const container = document.querySelector(".product-container");
+
+    // ✅ Generate product cards dynamically
+    products.forEach((p, index) => {
+      const card = document.createElement("div");
+      card.classList.add("product-card");
+      card.innerHTML = `
+      <img src="./assets/${p.code}.webp" alt="${p.name} ${p.code}">
+      <h3 class="productName">${p.name} - ${p.code}</h3>
+      <p style=" min-height: 52px;">${p.desc}</p>
+       <div class="product-footer">
+      <div class="price">
+        <select onchange="updatePrice(this)" data-product="${p.code}">
+          <option value="A4">A4 Frame</option>
+          <option value="A3">A3 Frame</option>
+        </select>
+        <span class="price-text">₹400</span>
+      </div>
+      <button class="order-btn" onclick="placeOrder('${p.name}', '${p.code}', this)">Order Now</button>
+      </div>
+    `;
+      container.appendChild(card);
+    });
+
+    // ✅ Price Update Logic
+    function updatePrice(selectEl) {
+      const priceText = selectEl.parentElement.querySelector(".price-text");
+      priceText.textContent = selectEl.value === "A3" ? "₹700" : "₹400";
+    }
+
+    // ✅ WhatsApp Order Function
+    function placeOrder(name, code, btn) {
+      const parent = btn.closest(".product-card");
+      const size = parent.querySelector("select").value;
+      const price = parent.querySelector(".price-text").textContent;
+      const border = `${name} - ${code}`;
+
+      const message = `I am interested in ordering the frame:\n👉 ${name} (${code})\n📏 Size: ${size}\n💰 Price: ${price}\n🖼️ Border Model: ${border}`;
+      const encodedMsg = encodeURIComponent(message);
+      const phone = "+919342492236"; // Replace with your WhatsApp number
+      const whatsappURL = `https://wa.me/${phone}?text=${encodedMsg}`;
+
+      window.open(whatsappURL, "_blank");
+    }
+
+  </script>
+
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const sidePanel = document.getElementById('sidePanel');
+    const slider = document.getElementById('slider');
+    const overlay = document.getElementById('overlay');
+    const handle = document.getElementById('handle');
+
+    // Sidebar toggle
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      sidePanel.classList.toggle('active');
+    });
+
+    // Before-After Slider Logic
+    let isDragging = false;
+
+    const updateSlider = (x) => {
+      const rect = slider.getBoundingClientRect();
+      let offsetX = x - rect.left;
+      offsetX = Math.max(0, Math.min(offsetX, rect.width));
+      const percentage = (offsetX / rect.width) * 100;
+      overlay.style.width = `${percentage}%`;
+      handle.style.left = `${percentage}%`;
+    };
+
+    handle.addEventListener('mousedown', () => { isDragging = true; });
+    window.addEventListener('mouseup', () => { isDragging = false; });
+    window.addEventListener('mousemove', (e) => { if (isDragging) updateSlider(e.clientX); });
+
+    handle.addEventListener('touchstart', () => { isDragging = true; });
+    window.addEventListener('touchend', () => { isDragging = false; });
+    window.addEventListener('touchmove', (e) => { if (isDragging) updateSlider(e.touches[0].clientX); });
+
+    // Initial wiggle animation (only once)
+    window.addEventListener('load', () => {
+      handle.classList.add('initial-wiggle');
+      setTimeout(() => {
+        handle.classList.remove('initial-wiggle');
+      }, 2500);
+    });
+  </script>
+</body>
+
+</html>
