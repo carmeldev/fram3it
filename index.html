@@ -472,6 +472,9 @@
     }
 
     /* Product Section */
+    /* ===========================
+   Product Section Styles
+   =========================== */
     .product-container {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -479,6 +482,7 @@
       padding: 20px 40px;
     }
 
+    /* Individual Product Card */
     .product-card {
       border: 1px solid #ddd;
       border-radius: 12px;
@@ -486,7 +490,10 @@
       text-align: center;
       background: #fff;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-      transition: 0.3s;
+      transition: 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     .product-card:hover {
@@ -494,6 +501,7 @@
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     }
 
+    /* Product Image */
     .product-card img {
       width: 100%;
       height: 220px;
@@ -501,62 +509,292 @@
       border-radius: 8px;
     }
 
+    /* Product Name */
+    .productName {
+      font-size: 1.25rem;
+      font-weight: 600;
+      padding-top: 12px;
+      color: #1a1a1a;
+    }
+
+    .products-wrapper {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, transparent, #ccc, transparent);
+    }
+
+    .section-text {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .heading {
+      font-size: 2rem;
+      font-weight: 600;
+      color: #222;
+      margin: 0;
+    }
+
+    .subtext {
+      font-size: 1rem;
+      color: #555;
+      margin-top: 6px;
+      letter-spacing: 0.5px;
+    }
+
+    /* Fade-up animation */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeUp 1s ease forwards;
+    }
+
+    @keyframes fadeUp {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Price & Selector Area */
     .price {
       margin-top: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
     }
 
     select {
       padding: 6px 10px;
       border-radius: 6px;
       border: 1px solid #ccc;
+      outline: none;
+      transition: 0.3s;
+    }
+
+    select:focus {
+      border-color: #FDC500;
+      box-shadow: 0 0 6px rgba(253, 197, 0, 0.4);
     }
 
     .price-text {
-      margin-left: 10px;
       font-weight: bold;
       color: #51a3fa;
+      font-size: 1rem;
     }
 
+    /* Order Button */
     .order-btn {
       margin-top: 10px;
-      background: #51a3fa;
-      color: #fff;
+      background: #FDC500;
+      color: #1a1a1a;
       border: none;
       border-radius: 8px;
-      padding: 8px 12px;
+      padding: 10px 16px;
       cursor: pointer;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      transition: background 0.3s ease, transform 0.3s ease;
     }
 
     .order-btn:hover {
-      background: #3e8ed0;
+      background: #fdc600e0;
+      transform: translateY(-2px);
     }
 
-    .productName {
-      font-size: 1.25rem;
-      font-weight: 600;
-      padding-top: 12px;
-    }
-
+    /* Footer inside product card */
     .product-footer {
       margin-top: auto;
-      /* pushes footer to bottom */
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 8px;
     }
 
-    .heading {
-      font-weight: 600;
-      color: #51a3fa;
-      margin-top: 15px;
-    }
-  
-    @media (max-width: 576px) {
+    /* ===========================
+   Responsive Styles
+   =========================== */
+    @media (max-width: 768px) {
       .product-container {
-        padding: 20px;
+        padding: 20px 25px;
+        gap: 18px;
       }
 
+      .product-card img {
+        height: 180px;
+      }
+
+      .productName {
+        font-size: 1.1rem;
+      }
+
+      .price-text {
+        font-size: 0.95rem;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .heading {
+        font-size: 1.6rem;
+      }
+
+      .subtext {
+        font-size: 0.9rem;
+      }
+
+      .product-container {
+        grid-template-columns: repeat(2, minmax(140px, 1fr));
+        gap: 12px;
+        padding: 15px;
+      }
+
+      .product-card {
+        padding: 10px;
+        border-radius: 10px;
+      }
+
+      .product-card img {
+        height: 120px;
+      }
+
+      .productName {
+        font-size: 0.9rem;
+      }
+
+      .heading {
+        font-size: 0.85rem;
+      }
+
+      select {
+        padding: 4px 8px;
+        font-size: 0.8rem;
+      }
+
+      .price-text {
+        font-size: 0.8rem;
+      }
+
+      .order-btn {
+        font-size: 0.8rem;
+        padding: 6px 10px;
+        border-radius: 6px;
+      }
+    }
+
+
+
+    @import url('https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css');
+
+    .fram3-footer {
+      background: radial-gradient(circle at top left, #111, #000);
+      color: #fff;
+      padding: 60px 20px 30px;
+      font-family: "Poppins", sans-serif;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .fram3-footer::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 10%;
+      width: 80%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 40px;
+    }
+
+    .footer-brand .footer-logo {
+      width: 140px;
+      margin-bottom: 12px;
+      filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.2));
+    }
+
+    .footer-brand .tagline {
+      font-size: 0.95rem;
+      color: #ccc;
+      letter-spacing: 0.5px;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 80px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links h4 {
+      font-size: 1rem;
+      color: #fff;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .footer-links a {
+      display: block;
+      color: #aaa;
+      font-size: 0.9rem;
+      margin: 5px 0;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: #fff;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 20px;
+    }
+
+    .footer-social a {
+      color: #fff;
+      font-size: 1.3rem;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .footer-social a:hover {
+      transform: scale(1.2);
+      color: #ffcc70;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      margin-top: 50px;
+      text-align: center;
+      padding-top: 20px;
+      font-size: 0.85rem;
+      color: #aaa;
     }
   </style>
 </head>
@@ -612,16 +850,70 @@
   </div>
 
 
-  <div style="margin-top: 40px">
-    <!-- Product Listing Section -->
-    <h2 class="text-center heading">Our Products</h2>
-    <section id="products" class="products container">
-
-    </section>
-    <div class="product-container">
-      <!-- Example product card template -->
+  <div style="margin-top: 60px;">
+    <div class="products-wrapper">
+      <div class="section-header">
+        <div class="line"></div>
+        <div class="section-text">
+          <h2 class="heading fade-up">Our Products</h2>
+          <p class="subtext fade-up">Hand-curated frames for every memory 💛</p>
+        </div>
+        <div class="line"></div>
+      </div>
     </div>
+
+    <section id="products" class="products container fade-up">
+      <div class="product-container">
+        <!-- Example product card template -->
+        <!-- Your dynamic product cards will appear here -->
+      </div>
+    </section>
   </div>
+
+  <footer class="fram3-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="assets/logo/frame_it_logo.png" alt="Fram3.it Logo" class="footer-logo" />
+        <p class="tagline">We frame your memories, so they last forever ❤️</p>
+      </div>
+
+      <div class="footer-links">
+        <div>
+          <h4>Explore</h4>
+          <a href="#">Home</a>
+          <a href="#">Shop Frames</a>
+          <a href="#">Gift Ideas</a>
+          <a href="#">Gallery</a>
+        </div>
+        <div>
+          <h4>Customer Care</h4>
+          <a href="#">FAQs</a>
+          <a href="#">Track Order</a>
+          <a href="#">Return & Exchange</a>
+          <a href="#">Contact Us</a>
+        </div>
+        <div>
+          <h4>About</h4>
+          <a href="#">Our Story</a>
+          <a href="#">How It’s Made</a>
+          <a href="#">Reviews</a>
+          <a href="#">Privacy Policy</a>
+        </div>
+      </div>
+
+      <div class="footer-social">
+        <a href="#"><i class="ri-instagram-line"></i></a>
+        <a href="#"><i class="ri-facebook-line"></i></a>
+        <a href="#"><i class="ri-pinterest-line"></i></a>
+        <a href="#"><i class="ri-youtube-line"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 Fram3.it — Framing love, joy & memories since forever ✨</p>
+    </div>
+  </footer>
+
 
   <!-- Bootstrap JS (for any potential interactivity, though not strictly needed here) -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
@@ -707,6 +999,25 @@
 
   </script>
 
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const fadeElements = document.querySelectorAll(".fade-up");
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.style.animationDelay = "0.2s";
+              entry.target.classList.add("visible");
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+
+      fadeElements.forEach((el) => observer.observe(el));
+    });
+  </script>
 
   <script>
     const hamburger = document.getElementById('hamburger');
