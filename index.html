@@ -806,19 +806,42 @@
     /**
     whatsapp
     */
-    .whatsapp-order-banner {
+
+    /* carousel wrapper */
+    .banner-carousel {
+      display: flex;
+      overflow-x: hidden;
+      scroll-snap-type: x mandatory;
+      gap: 40px;
+      padding: 20px;
+      scroll-behavior: smooth;
+      animation: fadeInUp 1.6s ease-in;
+    }
+
+    .banner-card {
+      flex: 0 0 90%;
+      max-width: 1100px;
+      margin: 0 auto;
+      scroll-snap-align: center;
+
       display: flex;
       align-items: center;
       justify-content: space-between;
       background: linear-gradient(135deg, #e8f9e8, #fefefe);
       border-radius: 24px;
-      margin: 60px auto;
-      max-width: 1100px;
       overflow: hidden;
       box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
       padding: 60px 80px;
       flex-wrap: wrap;
       gap: 40px;
+    }
+
+    .free-shipping {
+      background: linear-gradient(135deg, #dfe9ff, #ffffff);
+    }
+
+    .quality {
+      background: linear-gradient(135deg, #ffeed5, #ffffff);
     }
 
     .whatsapp-left {
@@ -920,23 +943,9 @@
       }
     }
 
-    /* Fade in Up Animation */
-    .fade-in-up {
-      opacity: 0;
-      transform: translateY(40px);
-      animation: fadeInUp 1.2s ease forwards;
-    }
-
-    /* @keyframes fadeInUp {
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    } */
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .whatsapp-order-banner {
+    /* mobile */
+    @media(max-width:768px) {
+      .banner-card {
         flex-direction: column;
         text-align: center;
         padding: 40px 20px;
@@ -952,6 +961,75 @@
       }
     }
 
+    /**
+    Testimonials
+    */
+    .testimonials-clean {
+      padding: 80px 20px;
+      text-align: center;
+      /* background: #fff; */
+    }
+
+    .test-title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 40px;
+      color: #222;
+      animation: fadeInUp .8s ease;
+    }
+
+    .test-wrapper {
+      max-width: 850px;
+      margin: 0 auto;
+      position: relative;
+      min-height: 160px;
+    }
+
+    .test-slide {
+      opacity: 0;
+      position: absolute;
+      inset: 0;
+      transition: opacity .6s ease;
+    }
+
+    .test-slide.active {
+      opacity: 1;
+      position: relative;
+    }
+
+    .test-content {
+      font-size: 1.4rem;
+      font-weight: 500;
+      line-height: 1.5;
+      color: #222;
+      animation: fadeInUp .7s ease;
+    }
+
+    .test-name {
+      display: block;
+      margin-top: 20px;
+      font-size: 1rem;
+      color: #FDC500;
+      font-weight: 600;
+      animation: fadeInUp 1s ease;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+
+    /**
+    Scroll to top
+    */
     .goTopBtn {
       position: fixed;
       bottom: 24px;
@@ -1037,7 +1115,67 @@
     </div>
   </div>
 
-  <section class="whatsapp-order-banner fade-in-up">
+  <!--Whatsapp-->
+  <div class="banner-carousel" id="carousel">
+
+    <!-- slide 01 whatsapp -->
+    <section class="banner-card">
+      <div class="whatsapp-left">
+        <p class="mini-text">Order Updates</p>
+        <h2 class="big-text">
+          WE ACCEPT ORDERS <br />
+          ONLY VIA <span class="highlight">WHATSAPP</span>
+        </h2>
+        <a href="#" class="whatsapp-btn">Order Now on WhatsApp</a>
+        <p class="footer-text">Fast replies • Easy ordering • Secure chat</p>
+      </div>
+      <div class="whatsapp-right">
+        <div class="phone-container">
+          <img src="./assets/phone.png" alt="WhatsApp Phone" class="whatsapp-phone" />
+          <div class="glow"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- slide 02 shipping -->
+    <section class="banner-card free-shipping">
+      <div class="whatsapp-left">
+        <p class="mini-text">Across India</p>
+        <h2 class="big-text">
+          FREE SHIPPING <br />
+          <span class="highlight">ALL OVER INDIA</span>
+        </h2>
+        <p class="footer-text">No minimum order • Anywhere in India</p>
+      </div>
+      <div class="whatsapp-right">
+        <div class="phone-container">
+          <img src="./assets/shipping.png" class="whatsapp-phone" />
+          <div class="glow"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- slide 03 quality -->
+    <section class="banner-card quality">
+      <div class="whatsapp-left">
+        <p class="mini-text">Our Promise</p>
+        <h2 class="big-text">
+          QUALITY ASSURED <br />
+          <span class="highlight">SUPER FRAMES</span>
+        </h2>
+        <p class="footer-text">Premium materials • Durable finishes</p>
+      </div>
+      <div class="whatsapp-right">
+        <div class="phone-container">
+          <img src="./assets/quality.png" class="whatsapp-phone" />
+          <div class="glow"></div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- <section class="whatsapp-order-banner fade-in-up">
     <div class="whatsapp-left">
       <p class="mini-text">Order Updates</p>
       <h2 class="big-text">
@@ -1056,7 +1194,7 @@
         <div class="glow"></div>
       </div>
     </div>
-  </section>
+  </section> -->
 
 
   <div style="margin-top: 60px;">
@@ -1078,6 +1216,45 @@
       </div>
     </section>
   </div>
+
+  <!-- Testimonials -->
+  <section class="testimonials-clean">
+    <h2 class="test-title">Loved by people all over India 💛</h2>
+
+    <div class="test-wrapper">
+      <div class="test-slide active">
+        <p class="test-content">
+          “I gifted a collage frame for my wife. She literally had tears. Superb quality and packaging!”
+        </p>
+        <span class="test-name">– Raghav, Bengaluru</span>
+      </div>
+
+      <div class="test-slide">
+        <p class="test-content">
+          “Frames are premium, pricing is actually affordable. Now I want to frame all my travel pics!”
+        </p>
+        <span class="test-name">– Prisha, Delhi</span>
+      </div>
+
+      <div class="test-slide">
+        <p class="test-content">
+          “Got my A3 frame. It's just like in high-end galleries. My desk looks stunning now!”
+        </p>
+        <span class="test-name">– Ayaan, Mumbai</span>
+      </div>
+
+      <div class="test-slide">
+        <p class="test-content">
+          “Quick response on WhatsApp and hassle-free ordering. I already ordered 3 more frames.”
+        </p>
+        <span class="test-name">– Sreedevi, Chennai</span>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- Scroll to top -->
   <a href="#header" id="goTopBtn" class="goTopBtn"><img style="width: 17px;opacity: 0.7;"
       src="./assets/up-arrow.png"></a>
 
@@ -1270,6 +1447,30 @@
         handle.classList.remove('initial-wiggle');
       }, 2500);
     });
+  </script>
+  <script>
+    // Whatsapp
+    let idx = 0;
+    setInterval(() => {
+      const slides = document.querySelectorAll('.banner-card');
+      idx = (idx + 1) % slides.length;
+      document.getElementById('carousel').scrollTo({
+        left: slides[0].offsetWidth * idx,
+        behavior: 'smooth'
+      });
+    }, 3500);
+  </script>
+  <script>
+    // testimonials
+    let tidx = 0;
+    const tslides = document.querySelectorAll('.test-slide');
+
+    setInterval(() => {
+      tslides[tidx].classList.remove('active');
+      tidx = (tidx + 1) % tslides.length;
+      tslides[tidx].classList.add('active');
+    }, 3200);
+
   </script>
   <script>
     const goTopBtn = document.getElementById('goTopBtn');
