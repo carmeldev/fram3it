@@ -796,6 +796,155 @@
       font-size: 0.85rem;
       color: #aaa;
     }
+
+    /**
+    whatsapp
+    */
+    .whatsapp-order-banner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: linear-gradient(135deg, #e8f9e8, #fefefe);
+      border-radius: 24px;
+      margin: 60px auto;
+      max-width: 1100px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      padding: 60px 80px;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+
+    .whatsapp-left {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .mini-text {
+      font-size: 0.95rem;
+      color: #777;
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+
+    .big-text {
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: #111;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .highlight {
+      color: #25D366;
+    }
+
+    .whatsapp-btn {
+      display: inline-block;
+      background-color: #25D366;
+      color: white;
+      padding: 14px 28px;
+      border-radius: 30px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 6px 16px rgba(37, 211, 102, 0.3);
+    }
+
+    .whatsapp-btn:hover {
+      transform: translateY(-4px);
+      background-color: #1ebe5b;
+      box-shadow: 0 10px 22px rgba(37, 211, 102, 0.4);
+    }
+
+    .footer-text {
+      margin-top: 30px;
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    .whatsapp-right {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      min-width: 280px;
+    }
+
+    .phone-container {
+      position: relative;
+      width: 280px;
+      height: 280px;
+    }
+
+    .whatsapp-phone {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      z-index: 2;
+      position: relative;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .glow {
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 200px;
+      height: 40px;
+      background: radial-gradient(circle, rgba(38, 39, 39, 0.3), transparent 100%);
+      border-radius: 50%;
+      filter: blur(10px);
+      z-index: 1;
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    /* Fade in Up Animation */
+    .fade-in-up {
+      opacity: 0;
+      transform: translateY(40px);
+      animation: fadeInUp 1.2s ease forwards;
+    }
+
+    @keyframes fadeInUp {
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .whatsapp-order-banner {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 20px;
+      }
+
+      .big-text {
+        font-size: 2rem;
+      }
+
+      .phone-container {
+        width: 220px;
+        height: 220px;
+      }
+    }
   </style>
 </head>
 
@@ -848,6 +997,28 @@
       <div class="slider-handle" id="handle"></div>
     </div>
   </div>
+
+  <section class="whatsapp-order-banner fade-in-up">
+    <div class="whatsapp-left">
+      <p class="mini-text">Order Updates</p>
+      <h2 class="big-text">
+        WE ACCEPT ORDERS <br />
+        ONLY VIA <span class="highlight">WHATSAPP</span>
+      </h2>
+      <a href="#products" class="whatsapp-btn">
+        Order Now on WhatsApp
+      </a>
+      <p class="footer-text">Fast replies • Easy ordering • Secure chat</p>
+    </div>
+
+    <div class="whatsapp-right">
+      <div class="phone-container">
+        <img src="./assets/phone.png" alt="WhatsApp Phone"
+          class="whatsapp-phone" />
+        <div class="glow"></div>
+      </div>
+    </div>
+  </section>
 
 
   <div style="margin-top: 60px;">
