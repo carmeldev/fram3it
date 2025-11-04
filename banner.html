@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fram3it - Snap it. Frame it. Love it!</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      font-family: 'Outfit', sans-serif;
+      background: linear-gradient(135deg, #ffffff 0%, #f7f7f7 100%);
+      overflow: hidden;
+      position: relative;
+      color: #1c1c1c;
+    }
+
+    /* === Header === */
+    .header {
+      position: absolute;
+      top: 15px;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1100;
+    }
+
+    .hamburger {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      cursor: pointer;
+      width: 35px;
+      height: 25px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      z-index: 1200;
+    }
+
+    .hamburger span {
+      background: #1c1c1c;
+      height: 4px;
+      border-radius: 2px;
+      transition: 0.3s;
+    }
+
+    .hamburger.active span:nth-child(1) {
+      transform: translateY(10px) rotate(45deg);
+    }
+
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+      transform: translateY(-10px) rotate(-45deg);
+    }
+
+    .logo-top {
+      width: 130px;
+      height: 130px;
+      background: url('./assets/logo/frame_it_logo.png') center/contain no-repeat;
+    }
+
+    /* === Side Panel === */
+    .side-panel {
+      position: fixed;
+      top: 0;
+      left: -300px;
+      width: 280px;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      box-shadow: 2px 0 20px rgba(0, 0, 0, 0.1);
+      transition: left 0.4s ease;
+      padding: 80px 25px;
+      z-index: 1000;
+    }
+
+    .side-panel.active {
+      left: 0;
+    }
+
+    .side-panel h3 {
+      font-weight: 600;
+      font-size: 1.6rem;
+      color: #FDC500;
+      margin-bottom: 25px;
+    }
+
+    .side-panel ul {
+      list-style: none;
+    }
+
+    .side-panel ul li {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #333;
+      margin: 18px 0;
+      opacity: 0;
+      transform: translateX(-20px);
+      animation: fadeInLeft 0.6s forwards;
+    }
+
+    .side-panel.active ul li {
+      opacity: 1;
+      transform: translateX(0);
+      transition: all 0.3s ease;
+    }
+
+    @keyframes fadeInLeft {
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    /* === Main Content === */
+    .main-container {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      /* justify-content: space-between; */
+      height: 100vh;
+      padding: 0 60px;
+    }
+
+    /* === Banner Section === */
+    .banner {
+      width: 45%;
+      animation: fadeInUp 1s ease-out;
+    }
+
+    .title {
+      font-weight: 700;
+      font-size: 2.6rem;
+      color: #1c1c1c;
+      margin-bottom: 20px;
+      animation: fadeInUp 1s ease-out;
+    }
+
+    .title span {
+      color: #FDC500;
+    }
+
+    .subtitle {
+      font-weight: 500;
+      font-size: 1.2rem;
+      color: #333;
+      line-height: 1.5;
+      margin-bottom: 12px;
+      animation: fadeInUp 1.2s ease-out;
+    }
+
+    .subtitle span {
+      color: #FDC500;
+    }
+
+    .subsubtitle {
+      font-weight: 400;
+      font-size: 1rem;
+      color: #444;
+      line-height: 1.5;
+      animation: fadeInUp 1.4s ease-out;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .search-container {
+      margin-top: 25px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      animation: fadeInUp 1.6s ease-out;
+    }
+
+    .search-box {
+      width: 100%;
+      max-width: 400px;
+      background: #fff;
+      border-radius: 50px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      padding: 12px 20px 12px 50px;
+      font-size: 1rem;
+      border: none;
+      outline: none;
+      transition: all 0.4s ease;
+    }
+
+    .search-box:hover {
+      box-shadow: 0 6px 20px rgba(253, 197, 0, 0.4);
+      transform: scale(1.03);
+    }
+
+    .search-box:focus {
+      box-shadow: 0 8px 25px rgba(253, 197, 0, 0.6);
+      transform: scale(1.05);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 18px;
+      font-size: 20px;
+      color: #FDC500;
+      pointer-events: none;
+      transition: transform 0.3s ease;
+      z-index: 1;
+    }
+
+    .search-container:hover .search-icon {
+      transform: rotate(15deg);
+    }
+
+    /* === Image Slider === */
+    .slider-container {
+      position: relative;
+      width: 50%;
+      aspect-ratio: 16/9;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    }
+
+    /* .slider-container.initial-wiggle {
+      animation: initialWiggle 2.5s ease-in-out;
+    } */
+
+    @keyframes initialWiggle {
+      0% {
+        transform: translateX(0);
+      }
+
+      20% {
+        transform: translateX(-8px);
+      }
+
+      40% {
+        transform: translateX(8px);
+      }
+
+      60% {
+        transform: translateX(-5px);
+      }
+
+      80% {
+        transform: translateX(5px);
+      }
+
+      100% {
+        transform: translateX(0);
+      }
+    }
+
+    .slider-container img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.2s ease-out;
+    }
+
+    .slider-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50%;
+      height: 100%;
+      overflow: hidden;
+      transition: width 0.15s ease-out;
+    }
+
+    .slider-overlay img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .slider-handle {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 4px;
+      height: 100%;
+      background: #fff;
+      cursor: ew-resize;
+      transform: translateX(-50%);
+      transition: left 0.15s ease-out;
+    }
+
+    .slider-handle.initial-wiggle{
+      animation: initialWiggle 2.5s ease-in-out;
+    }
+
+    .slider-handle::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 40px;
+      height: 40px;
+      background: #FDC500;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    @media (max-width: 900px) {
+      .main-container {
+        flex-direction: column;
+        padding: 120px 20px 20px;
+      }
+
+      .banner,
+      .slider-container {
+        width: 100%;
+      }
+
+      .banner {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+    <div class="logo-top"></div>
+  </div>
+
+  <!-- Side Panel -->
+  <div class="side-panel" id="sidePanel">
+    <h3>Explore</h3>
+    <ul>
+      <li>Custom Frames</li>
+      <li>Calendars</li>
+      <li>Anime Frames</li>
+      <li>Cinema Frames</li>
+      <li>Sports Frames</li>
+    </ul>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-container">
+    <div class="banner">
+      <div class="title">
+        Snap it. <span>Fram3 it.</span> Love it!
+      </div>
+      <div class="subtitle">
+        Capture your moments. <span>Frame them beautifully.</span> Treasure forever.
+      </div>
+      <div class="subsubtitle">
+        Premium Customized Photo Frames – Order Now.
+      </div>
+
+      <div class="search-container">
+        <img src="./assets/search.png" class="search-icon">
+        <input type="text" id="search" class="search-box" placeholder="Search frames, sizes, or styles...">
+      </div>
+    </div>
+
+    <div class="slider-container" id="slider">
+      <img src="./2.jpg" alt="After Image">
+      <div class="slider-overlay" id="overlay">
+        <img src="./1.jpg" alt="Before Image">
+      </div>
+      <div class="slider-handle" id="handle"></div>
+    </div>
+  </div>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const sidePanel = document.getElementById('sidePanel');
+    const slider = document.getElementById('slider');
+    const overlay = document.getElementById('overlay');
+    const handle = document.getElementById('handle');
+
+    // Sidebar toggle
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      sidePanel.classList.toggle('active');
+    });
+
+    // Before-After Slider Logic
+    let isDragging = false;
+
+    const updateSlider = (x) => {
+      const rect = slider.getBoundingClientRect();
+      let offsetX = x - rect.left;
+      offsetX = Math.max(0, Math.min(offsetX, rect.width));
+      const percentage = (offsetX / rect.width) * 100;
+      overlay.style.width = `${percentage}%`;
+      handle.style.left = `${percentage}%`;
+    };
+
+    handle.addEventListener('mousedown', () => { isDragging = true; });
+    window.addEventListener('mouseup', () => { isDragging = false; });
+    window.addEventListener('mousemove', (e) => { if (isDragging) updateSlider(e.clientX); });
+
+    handle.addEventListener('touchstart', () => { isDragging = true; });
+    window.addEventListener('touchend', () => { isDragging = false; });
+    window.addEventListener('touchmove', (e) => { if (isDragging) updateSlider(e.touches[0].clientX); });
+
+    // Initial wiggle animation (only once)
+    window.addEventListener('load', () => {
+      handle.classList.add('initial-wiggle');
+      setTimeout(() => {
+        handle.classList.remove('initial-wiggle');
+      }, 2500);
+    });
+  </script>
+
+</body>
+
+</html>
