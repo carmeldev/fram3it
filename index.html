@@ -735,10 +735,6 @@
         font-size: 0.9rem;
       }
 
-      .heading {
-        font-size: 0.85rem;
-      }
-
       select {
         padding: 4px 8px;
         font-size: 0.8rem;
@@ -1121,6 +1117,133 @@
       margin-bottom: 30px;
     }
 
+    /** Categories */
+    .cat-bubble {
+      position: fixed;
+      bottom: 90px;
+      right: 22px;
+      width: 54px;
+      height: 54px;
+      background: #FDC500;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, .25);
+      cursor: pointer;
+      transition: transform .25s;
+      animation: initialJump 2.5s ease-in-out;
+    }
+
+    @keyframes initialJump {
+      0% {
+        transform: translateY(0);
+      }
+
+      20% {
+        transform: translateY(-8px);
+      }
+
+      40% {
+        transform: translateY(8px);
+      }
+
+      60% {
+        transform: translateY(-5px);
+      }
+
+      80% {
+        transform: translateY(5px);
+      }
+
+      100% {
+        transform: translateY(0);
+      }
+    }
+
+    .cat-bubble-inner {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .cat-panel {
+      position: fixed;
+      bottom: 110px;
+      right: 22px;
+      width: 240px;
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, .18);
+      z-index: 9999;
+      padding: 14px;
+      transform: scale(.7);
+      opacity: 0;
+      pointer-events: none;
+      transform-origin: bottom right;
+      transition: opacity .25s, transform .25s;
+    }
+
+    .cat-panel.open {
+      opacity: 1;
+      pointer-events: auto;
+      transform: scale(1);
+    }
+
+    .cat-panel-header {
+      font-weight: 700;
+      color: #1a1a1a;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: .95rem;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .cat-min {
+      border: none;
+      background: #f2f2f2;
+      width: 26px;
+      height: 26px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 18px;
+    }
+
+    .cat-list {
+      padding-top: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .cat-list button {
+      border: none;
+      background: #fff;
+      padding: 10px 12px;
+      text-align: left;
+      border-radius: 10px;
+      font-weight: 500;
+      cursor: pointer;
+      font-size: .9rem;
+      border: 1px solid #eee;
+      transition: .2s;
+    }
+
+    .cat-list button:hover {
+      transform: translateY(-2px);
+      border-color: #FDC500;
+    }
+
+    .cat-panel.closing {
+      transform: scale(.7);
+      opacity: 0;
+    }
+
+
+
     /**
     Scroll to top
     */
@@ -1155,6 +1278,57 @@
 
     .goTopBtn:hover {
       background: #FDC500;
+    }
+
+    /* ===========================================
+   GLOBAL fram-tip
+   ------------------------------------------- */
+    /* .fram-tip {
+      position: relative;
+      cursor: pointer;
+    } */
+
+    /* actual box */
+    .fram-tip::after {
+      content: attr(data-tip);
+      position: absolute;
+      bottom: calc(100% + 8px);
+      left: 50%;
+      transform: translateX(-50%) translateY(5px);
+      background: rgba(0, 0, 0, 0.88);
+      color: #fff;
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-size: 12px;
+      width: max-content;
+      max-width: 220px;
+      pointer-events: none;
+      opacity: 0;
+      transition: all .25s ease;
+      white-space: nowrap;
+      z-index: 9999;
+    }
+
+    /* small arrow */
+    /* .fram-tip::before {
+      content: "";
+      position: absolute;
+      bottom: calc(100% + 2px);
+      left: 50%;
+      transform: translateX(-50%) translateY(5px);
+      border-width: 6px;
+      border-style: solid;
+      border-color: rgba(0, 0, 0, 0.88) transparent transparent transparent;
+      opacity: 0;
+      pointer-events: none;
+      transition: all .25s ease;
+    } */
+
+    /* show fram-tip */
+    .fram-tip:hover::after,
+    .fram-tip:hover::before {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0px);
     }
   </style>
 </head>
@@ -1346,11 +1520,34 @@
     </div>
   </section>
 
+  <!-- Categories -->
+  <!-- FLOATING CATEGORY BUBBLE -->
+  <div class="cat-bubble fram-tip" id="catBubble" data-tip="Categories">
+    <div class="cat-bubble-inner" id="catBubbleInner">
+      <img style="width: 20px;" src="./assets/category.png">
+    </div>
+  </div>
+
+  <!-- FLOATING CATEGORY PANEL -->
+  <div class="cat-panel" id="catPanel">
+    <div class="cat-panel-header">
+      Categories
+      <button class="cat-min" id="catMinBtn">–</button>
+    </div>
+    <div class="cat-list">
+      <button>Custom Frames</button>
+      <button>Calendars</button>
+      <button>Anime Frames</button>
+      <button>Gaming Frames</button>
+      <button>Cinema Frames</button>
+      <button>Sports Frames</button>
+    </div>
+  </div>
 
 
   <!-- Scroll to top -->
-  <a href="#header" id="goTopBtn" class="goTopBtn"><img style="width: 17px;opacity: 0.7;"
-      src="./assets/up-arrow.png"></a>
+  <a href="#header" id="goTopBtn" class="goTopBtn fram-tip" data-tip="Scroll to Top"><img
+      style="width: 17px;opacity: 0.7;" src="./assets/up-arrow.png"></a>
 
   <footer class="fram3-footer">
     <div class="footer-inner">
@@ -1573,6 +1770,31 @@
     }, 3200);
 
   </script>
+  <script>
+    // Categories
+    const bubble = document.getElementById("catBubble");
+    const panel = document.getElementById("catPanel");
+    const minBtn = document.getElementById("catMinBtn");
+
+    bubble.addEventListener("click", () => {
+      bubble.style.opacity = "0";
+      bubble.style.pointerEvents = "none";
+      panel.classList.add("open");
+    });
+
+    minBtn.addEventListener("click", () => {
+      panel.classList.add("closing");
+      panel.classList.remove("open");
+
+      panel.addEventListener("transitionend", () => {
+        panel.classList.remove("closing");
+        bubble.style.opacity = "1";
+        bubble.style.pointerEvents = "auto";
+      }, { once: true });
+    });
+
+  </script>
+
   <script>
     const goTopBtn = document.getElementById('goTopBtn');
 
